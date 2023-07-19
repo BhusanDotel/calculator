@@ -5,86 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <style>
-        .div_to_flex{
-            display: flex;
-            justify-content: center;
-            margin-top: 100px;
-        }
-        .border{
-            width: 250px;
-            border: 1px solid rgba(0, 0, 0, 0.514);
-            padding-top: 30px;
-            /* padding: 20px; */
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 20px;
-            border-radius: 30px;
-            background-color: rgb(173, 173, 173);
-        }
-        input{
-            width: 100%;
-            box-sizing:border-box;
-            border-radius: 10px;
-            outline: none;
-            border: 1px solid rgba(0, 0, 0, 0.425);
-            height: 50px;
-            font-size: large;
-            padding-left: 10px;
-            padding-right: 10px;
-            background-color: rgb(148, 216, 148);   
-        }
-        input::placeholder{
-            color: black;
-        }
-        .buttons_div{
-            margin-top: 20px;
-            margin-bottom: 10px;
-            height: 250px;
-            display: grid;
-            grid-template-columns: repeat(4 ,1fr);
-            grid-template-rows: repeat(4,1fr);
-            column-gap: 10px;
-            row-gap: 10px;
-        }
-        button{
-            border-radius: 10px;
-            outline: none;
-            border: 1px solid rgba(0, 0, 0, 0.425);
-            color: black;
-            font-size: larger;
-            background-color: rgb(0, 0, 0);
-            color: white;
-            border: none;
-            outline: none;
-        }
-        button:hover{
-            cursor: pointer;
-            opacity: 0.9;
-        }
-        button:active{
-            transform: scale(0.9);
-        }
-        .clear{
-            background-color: rgb(194, 95, 95);
-        }
-        #point{
-            font-size: 32px;
-            padding-bottom: 15px;
-        }
-        .equal_button{
-            display: flex;
-            justify-content: center;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        #equals{
-            width: 50%;
-            height: 40px;
-            background-color: rgb(0, 0, 0);
-            color: rgb(255, 255, 255);
-        }
-
-    </style>
 </head>
 <body>
     <div class="div_to_flex">
@@ -112,14 +34,14 @@
                 <button id="point" onclick="updatecalculation('point')">.</button>
                 <button id="divide" onclick="updatecalculation('divide')">/</button>
                 <button id="multiply" onclick="updatecalculation('multiply')">*</button>
-                </div>
-                <div class="equal_button">
-                    <button id="equals" onclick="updatecalculation('equals')">=</button>
-                </div>
-                
+
             </div>
-    
+            <div class="equal_button">
+                <button id="equals" onclick="updatecalculation('equals')">=</button>
+            </div>
+                
         </div>
+    
     </div>
 
     <script>
