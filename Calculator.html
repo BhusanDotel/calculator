@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .div_to_flex{
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        .border{
+            width: 250px;
+            border: 1px solid rgba(0, 0, 0, 0.514);
+            padding-top: 30px;
+            /* padding: 20px; */
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            border-radius: 30px;
+            background-color: rgb(173, 173, 173);
+        }
+        input{
+            width: 100%;
+            box-sizing:border-box;
+            border-radius: 10px;
+            outline: none;
+            border: 1px solid rgba(0, 0, 0, 0.425);
+            height: 50px;
+            font-size: large;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: rgb(148, 216, 148);   
+        }
+        input::placeholder{
+            color: black;
+        }
+        .buttons_div{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            height: 250px;
+            display: grid;
+            grid-template-columns: repeat(4 ,1fr);
+            grid-template-rows: repeat(4,1fr);
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+        button{
+            border-radius: 10px;
+            outline: none;
+            border: 1px solid rgba(0, 0, 0, 0.425);
+            color: black;
+            font-size: larger;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            outline: none;
+        }
+        button:hover{
+            cursor: pointer;
+            opacity: 0.9;
+        }
+        button:active{
+            transform: scale(0.9);
+        }
+        .clear{
+            background-color: rgb(194, 95, 95);
+        }
+        #point{
+            font-size: 32px;
+            padding-bottom: 15px;
+        }
+        .equal_button{
+            display: flex;
+            justify-content: center;
+        }
+
+        #equals{
+            width: 50%;
+            height: 40px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div_to_flex">
+        <div class="border">
+            <div class="display_div">
+                <input id="display" placeholder="0" readonly="true" type="text">
+            </div>
+            <div class="buttons_div">
+                <button onclick="updatecalculation('seven')">7</button>
+                <button onclick="updatecalculation('eight')">8</button>
+                <button onclick="updatecalculation('nine')">9</button>
+                <button class="clear" onclick="updatecalculation('allclear')">AC</button>
+
+                <button onclick="updatecalculation('four')">4</button>    
+                <button onclick="updatecalculation('five')">5</button>
+                <button onclick="updatecalculation('six')">6</button>
+                <button id="plus" onclick="updatecalculation('plus')">+</button>
+
+                <button onclick="updatecalculation('one')">1</button>
+                <button onclick="updatecalculation('two')">2</button>
+                <button onclick="updatecalculation('three')">3</button>
+                <button id="minus" onclick="updatecalculation('minus')">-</button>
+
+                <button onclick="updatecalculation('zero')">0</button>
+                <button id="point" onclick="updatecalculation('point')">.</button>
+                <button id="divide" onclick="updatecalculation('divide')">/</button>
+                <button id="multiply" onclick="updatecalculation('multiply')">*</button>
+                </div>
+                <div class="equal_button">
+                    <button id="equals" onclick="updatecalculation('equals')">=</button>
+                </div>
+                
+            </div>
+    
+        </div>
+    </div>
+
+    <script>
+        const plus_button = document.getElementById("plus");
+        const sub_button = document.getElementById("minus");
+        const divide_button = document.getElementById("divide");
+        const multiply_button = document.getElementById("multiply");
+        const point_button = document.getElementById("point");
+        const equals_button = document.getElementById("equals");
+        const display =document.getElementById("display");
+
+        divide_button.disabled=true;
+        multiply_button.disabled=true;
+        point_button.disabled=true;
+        equals_button.disabled=true;
+
+        let calculation="";
+        let result = 0;
+        equal_pressed=0;
+    
+        function update_display(){
+            display.value=calculation;
+        }
+        function update_display_sign(){
+            display.value=result;
+        }
+
+        function updatecalculation(button){
+
+            divide_button.disabled=false;
+            multiply_button.disabled=false;
+            point_button.disabled=false;
+            equals_button.disabled=false;
+
+            if(button==='one'){ 
+                calculation +='1';
+                console.log(calculation);
+                update_display();
+                result=calculation;
+            } else if (button==='two'){
+                calculation +='2';
+                console.log(calculation);
+                update_display();
+                result=calculation;
+            }else if(button==='three'){
+                calculation +='3';
+                console.log(calculation);
+                update_display();
+                result=calculation;
+            }else if (button==='four'){
+                calculation +='4';
+                console.log(calculation);
+                update_display();
+                result=calculation;
+            } else if (button==='five'){
+                calculation +='5';
+                console.log(calculation);
+                update_display();
+                result=calculation;
+            }else if(button==='six'){
+                calculation +='6';
+                console.log(calculation);
+                update_display();
+                result=calculation;
+            }else if (button==='seven'){
+                calculation +='7';
+                console.log(calculation);
+                update_display();
+                result=calculation;
+            }else if (button==='eight'){
+                calculation +='8';
+                console.log(calculation);
+                update_display();
+                result=calculation;
+            }else if(button==='nine'){
+                calculation +='9';
+                console.log(calculation);
+                update_display();
+                result=calculation;
+            }else if (button==='zero'){
+                calculation +='0';
+                console.log(calculation);
+                update_display();
+                result=calculation;
+            } else if (button==='plus'){
+                if(equal_pressed>0){
+                    result +='+';
+                    calculation=result;
+                    update_display_sign();
+                }else{
+                    calculation +='+';
+                    console.log(calculation);
+                    update_display();
+                }
+            }else if(button==='minus'){
+                if(equal_pressed>0){
+                    result +='-';
+                    calculation=result;
+                    update_display_sign();
+                }else{
+                    calculation +='-';
+                    console.log(calculation);
+                    update_display();
+                }
+            }else if (button==='divide'){
+                if(equal_pressed>0){
+                    result +='/';
+                    calculation=result;
+                    update_display_sign();
+                    divide_button.disabled=true;
+                }else{
+                    calculation +='/';
+                    console.log(calculation);
+                    update_display();
+                    divide_button.disabled=true;
+                }
+            }else if(button==='multiply'){
+                if(equal_pressed>0){
+                    result +='*';
+                    calculation=result;
+                    update_display_sign();
+                    multiply_button.disabled=true;
+                }else{
+                    calculation +='*';
+                    console.log(calculation);
+                    update_display();
+                    multiply_button.disabled=true;
+                }  
+            }else if (button==='point'){
+                if(equal_pressed>0){
+                    result +='.';
+                    calculation=result;
+                    update_display_sign();
+                }else{
+                    calculation +='.';
+                    console.log(calculation);
+                    update_display();
+                }
+            }else if(button==='equals'){
+                equal_pressed +=1;
+                try{
+                    calculation =eval(result);
+                    console.log(calculation);
+                    update_display();
+                    result=calculation;
+                    calculation=""; 
+                }catch (error){
+                    calculation='Syntax Error';
+                    update_display();
+                }
+            }else{
+                result="";
+                calculation="";
+                console.log(calculation);
+                divide_button.disabled=true;
+                multiply_button.disabled=true;
+                point_button.disabled=true;
+                equals_button.disabled=true;
+                update_display();
+            }
+            
+        }
+               
+    </script>
+</body>
+</html>
