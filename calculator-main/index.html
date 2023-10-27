@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="div_to_flex">
+      <div class="border">
+        <div class="display_div">
+          <input id="display" placeholder="0" readonly="true" type="text" />
+        </div>
+        <div class="buttons_div">
+          <button onclick="updatecalculation('seven')">7</button>
+          <button onclick="updatecalculation('eight')">8</button>
+          <button onclick="updatecalculation('nine')">9</button>
+          <button class="clear" onclick="updatecalculation('allclear')">
+            AC
+          </button>
+
+          <button onclick="updatecalculation('four')">4</button>
+          <button onclick="updatecalculation('five')">5</button>
+          <button onclick="updatecalculation('six')">6</button>
+          <button id="plus" onclick="updatecalculation('plus')">+</button>
+
+          <button onclick="updatecalculation('one')">1</button>
+          <button onclick="updatecalculation('two')">2</button>
+          <button onclick="updatecalculation('three')">3</button>
+          <button id="minus" onclick="updatecalculation('minus')">-</button>
+
+          <button onclick="updatecalculation('zero')">0</button>
+          <button id="point" onclick="updatecalculation('point')">.</button>
+          <button id="divide" onclick="updatecalculation('divide')">/</button>
+          <button id="multiply" onclick="updatecalculation('multiply')">
+            *
+          </button>
+        </div>
+        <div class="equal_button">
+          <button id="equals" onclick="updatecalculation('equals')">=</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
